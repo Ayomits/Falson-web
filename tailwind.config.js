@@ -11,14 +11,19 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      "background": "#232323",
-      "components": "#4F4F4F",
+      background: "#232323",
+      components: "#4F4F4F",
       "components-hover": "#3D3D3D",
-      "text": "#E0E0E0",
-      "general": "#353535",
-      "accent": "#FF6347"
-    }
+      text: "#E0E0E0",
+      general: "#353535",
+      accent: "#FF6347",
+    },
+    fontFamily: {
+      roboto: ["Roboto", "sans-serif"],
+      dmsans: ["DM sans", "sans-serif"],
+      lato: ["Lato", "sans-serif"],
+      mplus: ["M PLUS Rounded 1c", "sans-serif"],
+    },
   },
   plugins: [],
-  
-}
+};
