@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <LayoutHeader />
-    <slot />
-  </div>
+  <NuxtLayout name="404">
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
