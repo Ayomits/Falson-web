@@ -5,3 +5,5 @@ export enum FalsonRoutes {
   DONATE = "/donate",
   STATUS = "/status",
 }
+
+export const backendUrl = 'http://localhost:3000/api'

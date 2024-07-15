@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { FalsonRoutes } from "~/routes";
+import { FalsonRoutes } from "@/constants";
 </script>
 
 <style scoped>

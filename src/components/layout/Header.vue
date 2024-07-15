@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import { computed } from "vue";
-import { FalsonRoutes } from "~/routes";
+import { FalsonRoutes } from "@/constants";
 
 const something = ref<number>(10);
 const calculate = computed((): number => 2 + 2);
