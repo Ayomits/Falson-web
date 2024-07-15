@@ -1,5 +1,5 @@
 <script>
-import '~/assets/main.css'
+import "~/assets/css/main.css";
 </script>
 
 <template>

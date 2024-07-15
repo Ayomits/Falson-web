@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
   modules: ["@pinia/nuxt", "@nuxt/image"],
-  css: ["@/assets/main.css"],
+  css: ["@/assets/css/main.css"],
   srcDir: "src/",
   postcss: {
     plugins: {

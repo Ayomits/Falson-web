@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
 useHead({
-  title: `Команды - Falson`
-})
+  title: `Команды - Falson`,
+});
 </script>
 
 <style></style>

@@ -4,20 +4,23 @@
       class="pt-[15px] pb-[10px] my-0 mx-auto max-w-[1200px] flex justify-between items-center"
     >
       <div class="font-lato font-extrabold text-3xl">
-        <RouterLink :to="FalsonRoutes.HOME"> Falson </RouterLink>
+        <NuxtLink to="/">
+          Falson
+        </NuxtLink>
       </div>
       <LayoutNavigation class="mt-[10px]" />
-      <LayoutAuth />
+      <LayoutAuth/>
     </div>
   </header>
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue";
-import { FalsonRoutes } from "@/constants";
 
-const something = ref<number>(10);
-const calculate = computed((): number => 2 + 2);
 </script>
 
-<style></style>
+<style scoped>
+header::before {
+  content: "";
+  background-color: #232323;
+}
+</style>

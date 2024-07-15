@@ -1,12 +1,14 @@
 <template>
-  <div class="">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
+import { backendUrl } from "~/constants";
+import type { UserDiscordResponse } from "~/types";
+
+// META
 useHead({
   title: "Falson",
   meta: [

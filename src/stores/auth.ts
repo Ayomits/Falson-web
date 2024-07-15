@@ -5,8 +5,8 @@ export const useAuthStore = defineStore({
   id: "authStore",
   state: () => ({
     isAuth: false,
-    accessToken: "",
-    refreshToken: "",
+    accessToken: null as string | null,
+    refreshToken: null as string | null,
   }),
   getters: {
     getIsAuth: (state) => state.isAuth,
