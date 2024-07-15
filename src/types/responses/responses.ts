@@ -108,4 +108,4 @@ export type UserGuildResponse = {
   invited: boolean;
 };
 
-export type UserGuildsReponse = UserGuildResponse[];
+export type UserGuildsResponse = UserGuildResponse[];
