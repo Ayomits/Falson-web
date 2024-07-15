@@ -20,4 +20,4 @@ export enum FalsonRoutes {
  * Это URL апишки
  * на конце / не ставить
  */
-export const backendUrl = "http://localhost:3000/api";
+export const backendUrl = "http://localhost:4000/api";

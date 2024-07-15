@@ -6,4 +6,4 @@ export enum FalsonRoutes {
   STATUS = "/status",
 }
 
-export const backendUrl = 'http://localhost:3000/api'
+export const backendUrl = 'http://localhost:4000/api'
