@@ -42,10 +42,10 @@ if (authStore.isAuth && !userStore.user) {
 
     userStore.saveUser(res);
   } catch {
-    isLoading.value = true;
+    isLoading.value = false;
   }
 }
-isLoading.value = true;
+isLoading.value = false;
 </script>
 
 <style></style>
