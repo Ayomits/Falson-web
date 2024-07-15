@@ -26,7 +26,7 @@ export const useAuthStore = defineStore({
     },
     async fetchTokens() {
       const accessTokenCookie = useCookie("accessToken", {
-        maxAge: 15 * 60 * 1000,
+        maxAge: 15 * 60,
         sameSite: "strict",
         secure: true,
       });
