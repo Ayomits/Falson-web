@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-col items-center justify-center md:text-[80px] sd:text-[60px] text-[100px] font-dmsans font-bold h-screen">
+  <div class="sm:text-[40px] flex flex-col items-center justify-center md:text-[80px] sd:text-[60px] text-[100px] font-dmsans font-bold h-screen">
     <div class="flex flex-row items-center gap-4">
       <img src="@/assets/imgs/logo.svg" alt="Logo" />
-      <p class="mt-[60px]">Falson</p>
+      <p class="sm:text-[50px] sm:hidden mt-[60px]">Falson</p>
     </div>
-    <div class="flex items-center flex-col mt-8 text-5xl">
+    <div class="sm:text-2xl flex items-center flex-col mt-8 text-5xl">
       <p>А вы знали?</p>
       <p class="text-xl mt-4">Весь код Falson делался 1 человеком</p>
       <div class="loader mt-[100px]"></div>
@@ -23,11 +23,11 @@
 }
 
 .loader {
-  border: 15px solid rgba(241, 241, 241, 0.1);
+  border: 15px solid #383737;
   border-left-color: #ffffff;
-  border-radius: 50%;
+  border-radius: 60%;
   width: 154px;
   height: 154px;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 </style>

@@ -24,6 +24,9 @@ module.exports = {
       lato: ["Lato", "sans-serif"],
       mplus: ["M PLUS Rounded 1c", "sans-serif"],
     },
+    screens: {
+      'sm': {'max': '639px'},
+    },
   },
   plugins: [],
 };

@@ -1,57 +1,57 @@
 <template>
-  <div>
-    <div>
-      <button
-        v-if="!authStore.isAuth"
-        @click="redirectToLogin"
-        class="bg-components font-text font-roboto p-2 rounded-[5px] hover:bg-components-hover hover:text-white"
-      >
-        Авторизироваться
-      </button>
-      <div
-        @click="toggleMenu"
-        v-if="authStore.isAuth"
-        class="flex gap-4 items-center font-dmsans font-bold cursor-pointer hover:text-white relative"
-        ref="menuRef"
-      >
-        <div class="flex gap-4 items-center">
-          <p class="mt-[10px]">{{ userStore.user?.global_name }}</p>
-          <img
-            :src="getUserAvatar"
-            class="rounded-3xl"
-            width="50"
-            alt="user avatar"
-          />
-        </div>
-        <div
-          v-show="isOpened"
-          class="absolute top-5 right-0 mt-12 bg-white shadow-lg rounded-lg w-48"
-        >
-          <UiUserMenu>
-            <UiUserMenuItem
-              name="Профиль"
-              :icon-path="profile"
-              option-color="#E0E0E0"
-              option-hover-color="#FFFFFF"
-              link-to="profile"
-            />
-            <UiUserMenuItem
-              name="Мои серверы"
-              :icon-path="servers"
-              option-color="#E0E0E0"
-              option-hover-color="#FFFFFF"
-              link-to="servers"
-            />
-            <UiUserMenuItem
-              @click="authStore.logout"
-              name="Выход"
-              :icon-path="logout"
-              option-color="#C93232"
-              option-hover-color="#FFFFFF"
-            />
-          </UiUserMenu>
-        </div>
-      </div>
+  <button
+    v-if="!authStore.isAuth"
+    @click="redirectToLogin"
+    class="bg-components font-text font-roboto p-2 rounded-[5px] hover:bg-components-hover hover:text-white"
+  >
+    Авторизироваться
+  </button>
+  <div
+    
+    @click="toggleMenu"
+    v-if="authStore.isAuth"
+    class="flex gap-4 items-center font-dmsans font-bold cursor-pointer hover:text-white relative"
+    ref="menuRef"
+  >
+    <div class="flex gap-4 items-center">
+      <p class="mt-[10px]">{{ userStore.user?.global_name }}</p>
+      <img
+        :src="getUserAvatar"
+        class="rounded-3xl sm:order-first"
+        width="50"
+        alt="user avatar"
+      />
+    </div>
+    <div
+      v-show="isOpened"
+      class="absolute top-5 right-0 mt-12 bg-white shadow-lg rounded-lg w-48 sm:left-2"
+    >
+      <UiUserMenu class="bg-[#262626] rounded-2xl">
+        <UiUserMenuItem
+          name="Профиль"
+          :icon-path="profile"
+          option-color="#E0E0E0"
+          option-hover-color="#FFFFFF"
+          link-to="profile"
+          bg-hover-color="#3D3D3D"
+        />
+        <UiUserMenuItem
+          name="Мои серверы"
+          :icon-path="servers"
+          option-color="#E0E0E0"
+          option-hover-color="#FFFFFF"
+          link-to="servers"
+          bg-hover-color="#3D3D3D"
+        />
+        <UiUserMenuItem
+          @click="authStore.logout"
+          name="Выход"
+          :icon-path="logout"
+          option-color="#C93232"
+          option-hover-color="#FFFFFF"
+          bg-hover-color="#3D3D3D"
+        />
+      </UiUserMenu>
     </div>
   </div>
 </template>

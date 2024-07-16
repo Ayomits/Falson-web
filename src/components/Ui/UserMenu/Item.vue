@@ -1,25 +1,15 @@
 <template>
-  <li class="flex items-center">
+  <li class="flex hover:bg-[#3D3D3D] ml-5 gap-2 items-center">
     <img :src="iconPath" alt="idk" />
-    <NuxtLink
-      v-if="linkTo"
-      :to="linkTo"
-      :class="`px-4 py-2 hover:bg-gray-200 text-[${optionColor}] hover:text-[${optionHoverColor}] cursor-pointer`"
-    >
+    <NuxtLink v-if="linkTo" :to="linkTo">
       {{ name }}
     </NuxtLink>
-    <li
-      v-if="!linkTo"
-      :class="`px-4 py-2 hover:bg-gray-200 text-[${optionColor}] hover:text-[${optionHoverColor}] cursor-pointer`"
-    >
-      {{ name }}
-    </li>
     <slot />
   </li>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   name: {
     type: String,
     required: true,
@@ -40,6 +30,10 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  bgHoverColor: {
+    type: String,
+    required: true,
+  }
 });
 </script>
 

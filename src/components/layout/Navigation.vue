@@ -1,14 +1,9 @@
 <template>
-  <div>
-    <div class="md:hidden flex items-center"></div>
-    <div class="nav md:flex gap-5 font-dmsans font-bold items-center">
-      <NuxtLink to="/">Главная</NuxtLink>
-      <NuxtLink to="/commands">Команды</NuxtLink>
-      <NuxtLink to="/history">История</NuxtLink>
-      <NuxtLink to="/status">Статус</NuxtLink>
-      <NuxtLink to="/donate">Поддержите нас</NuxtLink>
-    </div>
-  </div>
+  <NuxtLink to="/">Главная</NuxtLink>
+  <NuxtLink to="/commands">Команды</NuxtLink>
+  <NuxtLink to="/history">История</NuxtLink>
+  <NuxtLink to="/status">Статус</NuxtLink>
+  <NuxtLink to="/donate">Поддержите нас</NuxtLink>
 </template>
 
 <script lang="ts" setup></script>
@@ -23,9 +18,7 @@ a:hover {
   border-bottom: 2px solid transparent;
   border-color: #ffffff;
 }
-</style>
 
-<style>
 @media (max-width: 768px) {
   .nav {
     display: flex;
@@ -42,6 +35,10 @@ a:hover {
   .menu-enter-to,
   .menu-leave {
     max-height: 100vh;
+  }
+  .nuxt-link-active {
+    color: white;
+    border: none;
   }
 }
 </style>
