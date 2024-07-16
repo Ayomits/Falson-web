@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-general drop-shadow-xl sticky z-10">
+  <header class="bg-general drop-shadow-xl sticky z-10 sticky">
     <div
       class="pt-[15px] pb-[10px] my-0 mx-auto max-w-[1200px] flex justify-between items-center"
     >

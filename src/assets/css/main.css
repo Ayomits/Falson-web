@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 body {
-  background-color: #232323;
+  background: rgb(28, 28, 28);
+  background: linear-gradient(
+    38deg,
+    rgba(28, 28, 28, 1) 0%,
+    rgba(54, 54, 54, 1) 100%
+  );
+  min-height: 100vh;
   color: #e0e0e0;
+}
+
+@media (max-width: 1024px) {
+  body {
+    background: #232323;
+  }
 }

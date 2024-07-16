@@ -20,7 +20,7 @@ export const useAuthStore = defineStore({
     setIsAuth(isAuth: boolean = false) {
       this.isAuth = isAuth;
     },
-    setTokens(accessToken: string, refreshToken: string) {
+    setTokens(accessToken: string | null, refreshToken: string | null) {
       this.accessToken = accessToken;
       this.refreshToken = refreshToken;
     },
@@ -64,6 +64,13 @@ export const useAuthStore = defineStore({
       }
 
       return null;
+    },
+    logout() {
+      this.setTokens(null, null);
+      useCookie("accessToken").value = null;
+      useCookie("refreshToken").value = null;
+      this.setIsAuth(false);
+      return false;
     },
   },
 });
