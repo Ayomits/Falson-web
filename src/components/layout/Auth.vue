@@ -17,14 +17,14 @@
       <p class="mt-[10px]">{{ userStore.user?.global_name }}</p>
       <img
         :src="getUserAvatar"
-        class="rounded-3xl sm:order-first"
+        class="rounded-3xl sm:order-last"
         width="50"
         alt="user avatar"
       />
     </div>
     <div
       v-show="isOpened"
-      class="absolute top-5 right-0 mt-12 bg-white shadow-lg rounded-lg w-48 sm:left-2"
+      class="absolute top-5 right-0 mt-12 bg-white shadow-lg rounded-lg w-48 sm:right-2"
     >
       <UiUserMenu class="bg-[#262626] rounded-2xl">
         <UiUserMenuItem

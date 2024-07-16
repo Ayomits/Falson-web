@@ -83,6 +83,6 @@ header::before {
 }
 
 .items-start {
-  align-items: flex-start;
+  align-items: flex-end;
 }
 </style>
