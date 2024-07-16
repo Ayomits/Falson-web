@@ -7,14 +7,13 @@
     Авторизироваться
   </button>
   <div
-    
     @click="toggleMenu"
     v-if="authStore.isAuth"
     class="flex gap-4 items-center font-dmsans font-bold cursor-pointer hover:text-white relative"
     ref="menuRef"
   >
     <div class="flex gap-4 items-center">
-      <p class="mt-[10px]">{{ userStore.user?.global_name }}</p>
+      <p class="sm:hidden mt-[10px]">{{ userStore.user?.global_name }}</p>
       <img
         :src="getUserAvatar"
         class="rounded-3xl sm:order-last"

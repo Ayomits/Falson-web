@@ -1,44 +1,45 @@
 <template>
-  <NuxtLink to="/">Главная</NuxtLink>
-  <NuxtLink to="/commands">Команды</NuxtLink>
-  <NuxtLink to="/history">История</NuxtLink>
-  <NuxtLink to="/status">Статус</NuxtLink>
-  <NuxtLink to="/donate">Поддержите нас</NuxtLink>
+  <div @click="togleMenu" class="hidden sm:order-first sm:block">
+    <img src="@/assets/imgs/burger-bar.svg" alt="" />
+  </div>
+  <div class="sm:hidden flex items-center font-bold font-lato gap-3 mt-[10px]">
+    <LayoutNavigationLinks />
+  </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const isShowed = ref<boolean>(false);
+const isSmall = ref<boolean>(false);
+const menuRef = ref<HTMLElement | null>(null);
+const emit = defineEmits(["toggle-menu"]);
 
-<style scoped>
-a:hover {
-  color: white;
-  transition-delay: 0.5ms;
-}
-.nuxt-link-active {
-  color: white;
-  border-bottom: 2px solid transparent;
-  border-color: #ffffff;
-}
+const togleMenu = () => {
+  isShowed.value = !isShowed.value;
+  emit("toggle-menu", { isSmall: isSmall.value, isShowed: isShowed.value });
+};
 
-@media (max-width: 768px) {
-  .nav {
-    display: flex;
-    flex-direction: column;
+const handleResize = () => {
+  isSmall.value = window?.innerWidth < 768;
+  emit("toggle-menu", { isSmall: isSmall.value, isShowed: isShowed.value });
+};
+
+const handleClickOutside = (event: MouseEvent) => {
+  if (menuRef.value && !menuRef.value.contains(event.target as Node)) {
+    isShowed.value = false;
+    emit("toggle-menu", { isSmall: isSmall.value, isShowed: isShowed.value });
   }
-  .menu-enter-active,
-  .menu-leave-active {
-    transition: max-height 0.5s ease-in-out;
-  }
-  .menu-enter,
-  .menu-leave-to {
-    max-height: 0;
-  }
-  .menu-enter-to,
-  .menu-leave {
-    max-height: 100vh;
-  }
-  .nuxt-link-active {
-    color: white;
-    border: none;
-  }
-}
-</style>
+};
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+  document.addEventListener("click", handleClickOutside);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+  document.removeEventListener("click", handleClickOutside);
+});
+handleResize()
+</script>
+
+<style scoped></style>
