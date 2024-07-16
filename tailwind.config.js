@@ -25,7 +25,7 @@ module.exports = {
       mplus: ["M PLUS Rounded 1c", "sans-serif"],
     },
     screens: {
-      'sm': {'max': '639px'},
+      'sm': {'max': '768px'},
     },
   },
   plugins: [],

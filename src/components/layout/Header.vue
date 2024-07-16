@@ -4,7 +4,7 @@
       <div class="font-lato font-extrabold text-3xl sm:text-1xl">
         <NuxtLink to="/"> Falson </NuxtLink>
       </div>
-      <LayoutNavigation @toggle-menu="handleToggleMenu" />
+      <Navigation @toggle-menu="handleToggleMenu" />
       <LayoutAuth />
     </div>
   </header>
@@ -32,14 +32,15 @@ const handleToggleMenu = (obj: { isSmall: boolean; isShowed: boolean }) => {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
 }
 
 .mobile-navigation {
-  position: absolute;
+  position: fixed;
   top: 60px;
   left: 15%;
-  transform: translateX(-50%);
-  z-index: 20;
+  transform: translateX(-30%);
+  width: 150px;
+  z-index: 30;
 }
 </style>

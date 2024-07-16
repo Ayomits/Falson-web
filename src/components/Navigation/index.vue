@@ -2,8 +2,8 @@
   <div @click="togleMenu" class="hidden sm:order-first sm:block">
     <img src="@/assets/imgs/burger-bar.svg" alt="" />
   </div>
-  <div class="sm:hidden flex items-center font-bold font-lato gap-3 mt-[10px]">
-    <LayoutNavigationLinks />
+  <div class="sm:hidden flex items-center font-bold font-lato gap-4 mt-[10px]">
+    <NavigationLinks />
   </div>
 </template>
 

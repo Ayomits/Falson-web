@@ -1,5 +1,5 @@
 <template>
-  <LayoutPreloader v-if="isLoading" />
+  <Preloader v-if="isLoading" />
   <div v-if="!isLoading">
     <LayoutHeader />
     <slot />
