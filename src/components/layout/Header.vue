@@ -5,7 +5,7 @@
         <NuxtLink to="/"> Falson </NuxtLink>
       </div>
       <Navigation @toggle-menu="handleToggleMenu" />
-      <LayoutAuth />
+      <Auth />
     </div>
   </header>
   <div
@@ -13,7 +13,7 @@
     class="mobile-navigation max-w-[200px] bg-general border-none mt-[15px] rounded-2xl py-4"
   >
     <div class="flex flex-col max-w-[50%] mx-auto font-lato font-bold gap-2">
-      <LayoutNavigationLinks />
+      <NavigationLinks />
     </div>
   </div>
 </template>

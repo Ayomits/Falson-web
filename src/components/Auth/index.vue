@@ -14,7 +14,7 @@
   >
     <div class="flex gap-4 items-center">
       <p class="sm:hidden mt-[10px]">{{ userStore.user?.global_name }}</p>
-      <img
+      <NuxtImg
         :src="getUserAvatar"
         class="rounded-3xl sm:order-last"
         width="50"
@@ -57,7 +57,7 @@
 
 <script lang="ts" setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
-import { backendUrl } from "~/constants";
+import { backendUrl, DefaultAvatars } from "~/constants";
 import { useUserStore } from "~/stores/user";
 import { useAuthStore } from "~/stores/auth";
 import profile from "@/assets/imgs/profile.svg";
@@ -77,7 +77,7 @@ const toggleMenu = () => {
 const getUserAvatar = computed(() => {
   return userStore.user
     ? `https://cdn.discordapp.com/avatars/${userStore.user.id}/${userStore.user.avatar}.png`
-    : "";
+    : DefaultAvatars.Avatar3;
 });
 
 const redirectToLogin = async () => {

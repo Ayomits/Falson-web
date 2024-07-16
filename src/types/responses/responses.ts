@@ -36,7 +36,7 @@ export type GuildMemberResponse = {
   userId: string;
   avatar: string | null;
   flags: number;
-  displayName: string;
+  globalName: string;
   roles: string[];
   avatarURL: string | null;
   displayAvatarURL: string;

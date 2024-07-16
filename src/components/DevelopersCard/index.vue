@@ -1,15 +1,25 @@
 <template>
-  <div class="bg-general">
-    <p v-if="isLoading">
-      
-    </p>
-    <img src="" alt="" />
+  <div class="flex flex-col items-center drop-shadow-2xl rounded-2xl w-[325px] h-auto bg-general p-4">
+    <div v-if="isLoading" class="flex justify-center items-center w-full h-full">
+      <UiSpinner />
+    </div>
+    <div v-else class="flex flex-col items-center">
+      <NuxtImg
+        class="rounded-full border-[1.5px] border-text"
+        :src="user?.displayAvatarURL"
+        width="150"
+        :alt="user?.globalName"
+      />
+      <p class="mt-4 font-bold text-2xl font-roboto font-bold">{{ user?.globalName }}</p>
+      <p class="mt-2 text-sm text-text font-roboto">{{ role }}</p>
+    </div>
   </div>
 </template>
 
+
 <script lang="ts" setup>
-import { backendUrl } from "~/constants";
-import type { UserDiscordResponse } from "~/types";
+import { backendUrl, DefaultAvatars } from "~/constants";
+import type { GuildMemberResponse } from "~/types";
 
 const props = defineProps({
   userId: {
@@ -24,9 +34,12 @@ const props = defineProps({
 
 const isLoading = ref<boolean>(true);
 
-const user = await useFetch<UserDiscordResponse>(
+const { data } = await useFetch<GuildMemberResponse>(
   `${backendUrl}/discord/users/${props.userId}`
-).then(() => (isLoading.value = true));
+);
+const user = data.value;
+isLoading.value = false;
+
 </script>
 
 <style></style>

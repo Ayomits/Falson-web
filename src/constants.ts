@@ -8,6 +8,14 @@ export enum FalsonRoutes {
 
 export const backendUrl = "http://localhost:4000/api";
 
+export enum DefaultAvatars {
+  Avatar1 = `https://cdn.discordapp.com/embed/avatars/0.png`,
+  Avatar2 = `https://cdn.discordapp.com/embed/avatars/1.png`,
+  Avatar3 = `https://cdn.discordapp.com/embed/avatars/2.png`,
+  Avatar4 = `https://cdn.discordapp.com/embed/avatars/3.png`,
+  Avatar5 = `https://cdn.discordapp.com/embed/avatars/4.png`,
+}
+
 export const Staff: {
   userId: string;
   role: string;
