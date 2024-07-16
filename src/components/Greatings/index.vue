@@ -6,10 +6,20 @@
         Решении проблемы верификации на вашем сервере
       </p>
       <div class="sm:flex-col sm:gap-2 flex justify-center gap-10 mt-[15px]">
-        <button class="greatingsButton drop-shadow-2xl" @click="goTo(`${backendUrl}/auth/discord/invite`, true)">Пригласить</button>
-        <button class="greatingsButton drop-shadow-2xl" @click="goTo(`/servers`)" v-if="authStore.isAuth">
-          Мои серверы
+        <button
+          class="greatingsButton drop-shadow-2xl"
+          @click="goTo(`${backendUrl}/auth/discord/invite`, true)"
+        >
+          Пригласить
         </button>
+        <button
+          class="greatingsButton drop-shadow-2xl"
+          @click="
+            goTo(`${!authStore.isAuth ? backendUrl + 'auth/login' : '/servers'}`)
+          "
+        >
+        {{ authStore.isAuth ? "Мои серверы" : "Авторизироваться" }}
+      </button>
       </div>
     </div>
     <div class="sm:hidden">
@@ -19,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-import { backendUrl } from '~/constants';
+import { backendUrl } from "~/constants";
 
 const authStore = useAuthStore();
 
