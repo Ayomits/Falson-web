@@ -2,7 +2,9 @@
   <LayoutPreloader v-if="isLoading" />
   <div v-if="!isLoading">
     <LayoutHeader />
+    <slot />
   </div>
+
   <NuxtPage />
 </template>
 

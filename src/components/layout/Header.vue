@@ -1,21 +1,21 @@
 <template>
-  <header class="bg-general drop-shadow-2xl py-3 sticky">
+  <header class="bg-general drop-shadow-2xl py-3 sticky z-10">
     <div class="flex justify-between items-center max-w-[1200px] mx-auto">
-      <div class="font-lato font-extrabold text-3xl sm:text-1xl">Falson</div>
+      <div class="font-lato font-extrabold text-3xl sm:text-1xl">
+        <NuxtLink to="/"> Falson </NuxtLink>
+      </div>
       <LayoutNavigation @toggle-menu="handleToggleMenu" />
       <LayoutAuth />
     </div>
   </header>
   <div
     v-if="isShowed && isSmall"
-    class="max-w-[200px] bg-general border-none mt-[15px] rounded-2xl py-4"
+    class="mobile-navigation max-w-[200px] bg-general border-none mt-[15px] rounded-2xl py-4"
   >
     <div class="flex flex-col max-w-[50%] mx-auto font-lato font-bold gap-2">
       <LayoutNavigationLinks />
     </div>
   </div>
-
-  <!-- Mobile navigation  -->
 </template>
 
 <script lang="ts" setup>
@@ -28,4 +28,18 @@ const handleToggleMenu = (obj: { isSmall: boolean; isShowed: boolean }) => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.mobile-navigation {
+  position: absolute;
+  top: 60px;
+  left: 15%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+</style>

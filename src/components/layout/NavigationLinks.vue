@@ -8,7 +8,7 @@
 
 <script lang="ts" setup></script>
 
-<style>
+<style scoped>
 .nuxt-link-active {
   color: #fff;
   border-bottom: 3px solid white;
