@@ -28,7 +28,7 @@ export const Staff: {
   // Akakuke
   {
     userId: "920677195976941620",
-    role: "Pr manager",
+    role: "Creator",
   },
   // Ayomi
   {
