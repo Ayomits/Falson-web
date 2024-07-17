@@ -50,6 +50,7 @@
           option-color="#C93232"
           option-hover-color="#FFFFFF"
           bg-hover-color="#3D3D3D"
+          link-to="/"
         />
       </UiUserMenu>
     </div>

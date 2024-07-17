@@ -6,7 +6,7 @@
       </div>
       <Navigation @toggle-menu="handleToggleMenu" />
       <Suspense>
-        <LazyAuth :user="data as UserDiscordResponse" />
+        <Auth :user="data as UserDiscordResponse" />
         <template #fallback>
           <UiSpinner />
         </template>
@@ -24,6 +24,9 @@
 </template>
 
 <script lang="ts" setup>
+import { backendUrl } from "~/constants";
+import type { UserDiscordResponse } from "~/types";
+
 const isShowed = ref<boolean>(false);
 const isSmall = ref<boolean>(false);
 
@@ -32,18 +35,19 @@ const handleToggleMenu = (obj: { isSmall: boolean; isShowed: boolean }) => {
   isShowed.value = obj.isShowed;
 };
 
-import { backendUrl } from "~/constants";
-import type { UserDiscordResponse } from "~/types";
-
 const authStore = useAuthStore();
 
 const fetchUserData = async () => {
-  return await $fetch<UserDiscordResponse>(`${backendUrl}/users/@me/data`, {
-    method: "get",
-    headers: {
-      Authorization: `Bearer ${authStore.accessToken}`,
-    },
-  });
+  try {
+    return await $fetch<UserDiscordResponse>(`${backendUrl}/users/@me/data`, {
+      method: "get",
+      headers: {
+        Authorization: `Bearer ${authStore.accessToken}`,
+      },
+    });
+  } catch {
+    return null;
+  }
 };
 
 const { data, suspense } = useQuery({

@@ -1,10 +1,12 @@
 <template>
-  <div class="flex py-2 hover:bg-[#3D3D3D] ml-5 gap-2 items-center">
-    <img :src="iconPath" alt="idk" />
-    <NuxtLink v-if="linkTo" :to="linkTo">
+  <div
+    @click="linkTo ? navigateTo(linkTo) : null"
+    class="flex py-2 hover:bg-[#3D3D3D] ml-5 gap-2 items-center"
+  >
+    <img :src="iconPath" />
+    <p :class="`text-[${optionColor}] hover:text-[${optionHoverColor}]`">
       {{ name }}
-    </NuxtLink>
-    <slot />
+    </p>
   </div>
 </template>
 
@@ -33,7 +35,7 @@ defineProps({
   bgHoverColor: {
     type: String,
     required: true,
-  }
+  },
 });
 </script>
 

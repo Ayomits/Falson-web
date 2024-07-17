@@ -1,8 +1,10 @@
 <template>
   <Suspense>
-    <NuxtLayout >
-      <LazyGuildCard />
-    </NuxtLayout>
+    <template #default>
+      <NuxtLayout>
+        <LazyGuildCard />
+      </NuxtLayout>
+    </template>
     <template #fallback>
       <Preloader />
     </template>
