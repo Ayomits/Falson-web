@@ -42,7 +42,7 @@ export const useAuthStore = defineStore({
             "Content-Type": "application/json",
           },
           server: false,
-          lazy: true
+          lazy: true,
         });
 
         if (error.value) {
@@ -75,4 +75,5 @@ export const useAuthStore = defineStore({
       return navigateTo(`/`);
     },
   },
+  
 });

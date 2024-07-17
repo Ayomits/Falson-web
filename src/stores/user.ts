@@ -1,8 +1,7 @@
 import { defineStore } from "pinia";
 import type { UserDiscordResponse } from "~/types";
 
-export const useUserStore = defineStore({
-  id: "userStore",
+export const useUserStore = defineStore("user", {
   state: () => ({
     user: null as UserDiscordResponse | null,
   }),
@@ -14,4 +13,4 @@ export const useUserStore = defineStore({
       this.user = exceptedUser as any;
     },
   },
-});
+},);
