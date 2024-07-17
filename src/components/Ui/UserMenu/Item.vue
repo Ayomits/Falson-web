@@ -1,11 +1,11 @@
 <template>
-  <li class="flex hover:bg-[#3D3D3D] ml-5 gap-2 items-center">
+  <div class="flex py-2 hover:bg-[#3D3D3D] ml-5 gap-2 items-center">
     <img :src="iconPath" alt="idk" />
     <NuxtLink v-if="linkTo" :to="linkTo">
       {{ name }}
     </NuxtLink>
     <slot />
-  </li>
+  </div>
 </template>
 
 <script lang="ts" setup>

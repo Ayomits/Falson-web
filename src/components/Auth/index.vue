@@ -39,7 +39,7 @@
           :icon-path="servers"
           option-color="#E0E0E0"
           option-hover-color="#FFFFFF"
-          link-to="servers"
+          link-to="dashboard"
           bg-hover-color="#3D3D3D"
         />
         <UiUserMenuItem
