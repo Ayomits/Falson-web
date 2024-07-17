@@ -41,6 +41,8 @@ export const useAuthStore = defineStore({
           headers: {
             "Content-Type": "application/json",
           },
+          server: false,
+          lazy: true
         });
 
         if (error.value) {

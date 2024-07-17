@@ -1,15 +1,31 @@
 <template>
-  <div>
+  <NuxtLayout>
+    <UiSearchBar  class="flex justify-center" />
+
     <NuxtPage />
-  </div>
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
+import { backendUrl } from "~/constants";
+import { type UserGuildResponse } from "~/types";
+
 definePageMeta({
-  middleware: "auth"
-})
+  middleware: "auth",
+});
+
+const authState = useAuthStore();
+const {status, data: guilds} = await useFetch<UserGuildResponse[]>(
+  `${backendUrl}/users/@me/guilds`,
+  {
+    headers: {
+      Authorization: `Bearer ${authState.accessToken}`,
+    },
+    method: "GET",
+    server: false,
+    lazy: true
+  }
+);
 </script>
 
-<style>
-
-</style>
+<style></style>

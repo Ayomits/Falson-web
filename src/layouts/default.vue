@@ -1,11 +1,8 @@
 <template>
-  <Preloader v-if="isLoading" />
-  <div v-if="!isLoading">
-    <LayoutHeader />
+  <div>
+    <LazyLayoutHeader />
     <slot />
-
   </div>
-
   <NuxtPage />
 </template>
 
@@ -24,31 +21,26 @@ useHead({
   ],
 });
 
-// Preload
-const isLoading = ref<boolean>(true);
-
 // Fetching and caching
 const authStore = useAuthStore();
 const userStore = useUserStore();
 
 if (authStore.isAuth && !userStore.user) {
   try {
-    const res = await $fetch<UserDiscordResponse>(
+    const { status, data: res } = await useFetch<UserDiscordResponse>(
       `${backendUrl}/users/@me/data`,
       {
         method: "GET",
         headers: {
           Authorization: `Bearer ${authStore.accessToken}`,
         },
+        server: false,
       }
     );
 
-    userStore.saveUser(res);
-  } catch {
-    isLoading.value = false;
-  }
+    userStore.saveUser(res.value as UserDiscordResponse);
+  } catch {}
 }
-isLoading.value = false;
 </script>
 
 <style></style>

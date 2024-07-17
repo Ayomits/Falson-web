@@ -1,7 +1,7 @@
 <template>
   <ClientOnly>
     <div
-      class="flex flex-col items-center drop-shadow-2xl rounded-2xl w-[325px] h-auto bg-general p-4"
+      class="flex flex-col items-center drop-shadow-2xl rounded-2xl w-auto h-auto bg-general p-4 px-10"
     >
       <div
         v-if="isLoading"

@@ -3,6 +3,7 @@ import { useAuthStore } from "@/stores/auth";
 
 export default defineNuxtRouteMiddleware((to: any, from: any) => {
   const authStore = useAuthStore();
+
   authStore
     .fetchTokens()
     .then((data) => {

@@ -1,14 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: {name: "layout", mode: "out-in"}
+  },
   compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
   ssr: true,
-  plugins: [
-    {
-      src: `@/plugins/directives`,
-      mode: "client",
-    },
-  ],
   modules: ["@pinia/nuxt", "@nuxt/image"],
   css: ["@/assets/css/main.css"],
   srcDir: "src/",
