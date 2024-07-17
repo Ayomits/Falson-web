@@ -4,7 +4,10 @@
     class="flex py-2 hover:bg-[#3D3D3D] ml-5 gap-2 items-center"
   >
     <img :src="iconPath" />
-    <p :class="`text-[${optionColor}] hover:text-[${optionHoverColor}]`">
+    <p
+      :style="{ color: optionColor }"
+      :class="`hover:text-[${optionHoverColor}]`"
+    >
       {{ name }}
     </p>
   </div>
