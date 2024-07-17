@@ -15,7 +15,7 @@
         <button
           class="greatingsButton drop-shadow-2xl"
           @click="
-            goTo(`${!authStore.isAuth ? backendUrl + '/auth/discord/login' : '/servers'}`, !authStore.isAuth)
+            goTo(`${!authStore.isAuth ? backendUrl + '/auth/discord/login' : '/dashboard'}`, !authStore.isAuth)
           "
         >
         {{ authStore.isAuth ? "Мои серверы" : "Авторизироваться" }}

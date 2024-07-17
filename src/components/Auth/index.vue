@@ -6,13 +6,14 @@
   >
     Авторизироваться
   </button>
+
   <div
     @click="toggleMenu"
     v-if="authStore.isAuth"
     class="flex gap-4 items-center font-dmsans font-bold cursor-pointer hover:text-white relative"
     ref="menuRef"
   >
-    <div class="flex gap-4 items-center">
+    <div class="flex gap-4 items-center" v-if="authStore.isAuth">
       <p class="sm:hidden mt-[10px]">{{ userStore.user?.global_name }}</p>
       <NuxtImg
         :src="getUserAvatar"
@@ -58,14 +59,23 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import { backendUrl, DefaultAvatars } from "~/constants";
-import { useUserStore } from "~/stores/user";
 import { useAuthStore } from "~/stores/auth";
 import profile from "@/assets/imgs/profile.svg";
 import servers from "@/assets/imgs/servers.svg";
 import logout from "@/assets/imgs/logout.svg";
+import type { UserDiscordResponse } from "~/types";
 
-const userStore = useUserStore();
+const props = defineProps({
+  user: {
+    type: Object,
+    required: true,
+  },
+});
+
 const authStore = useAuthStore();
+const userStore = {
+  user: props.user as UserDiscordResponse,
+};
 
 const isOpened = ref<boolean>(false);
 const menuRef = ref<HTMLElement | null>(null);
@@ -77,7 +87,7 @@ const toggleMenu = () => {
 const getUserAvatar = computed(() => {
   return userStore.user
     ? `https://cdn.discordapp.com/avatars/${userStore.user.id}/${userStore.user.avatar}.png`
-    : DefaultAvatars.Avatar3;
+    : DefaultAvatars.Avatar1;
 });
 
 const redirectToLogin = async () => {

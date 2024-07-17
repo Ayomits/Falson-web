@@ -5,7 +5,12 @@
         <NuxtLink to="/"> Falson </NuxtLink>
       </div>
       <Navigation @toggle-menu="handleToggleMenu" />
-      <Auth />
+      <Suspense>
+        <LazyAuth :user="data as UserDiscordResponse" />
+        <template #fallback>
+          <UiSpinner />
+        </template>
+      </Suspense>
     </div>
   </header>
   <div
@@ -26,6 +31,27 @@ const handleToggleMenu = (obj: { isSmall: boolean; isShowed: boolean }) => {
   isSmall.value = obj.isSmall;
   isShowed.value = obj.isShowed;
 };
+
+import { backendUrl } from "~/constants";
+import type { UserDiscordResponse } from "~/types";
+
+const authStore = useAuthStore();
+
+const fetchUserData = async () => {
+  return await $fetch<UserDiscordResponse>(`${backendUrl}/users/@me/data`, {
+    method: "get",
+    headers: {
+      Authorization: `Bearer ${authStore.accessToken}`,
+    },
+  });
+};
+
+const { data, suspense } = useQuery({
+  queryKey: ["userData"],
+  queryFn: fetchUserData,
+});
+
+await suspense();
 </script>
 
 <style scoped>

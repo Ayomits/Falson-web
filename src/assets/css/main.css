@@ -35,17 +35,3 @@ body::-ms-scrollbar-thumb:active {
   background-color: #666;
 }
 
-body {
-  animation: spawn 2s 1;
-  animation-fill-mode: forwards;
-  animation-delay: 0.1s;
-}
-
-@keyframes spawn {
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}

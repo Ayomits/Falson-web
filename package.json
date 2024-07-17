@@ -10,8 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@hebilicious/vue-query-nuxt": "^0.3.0",
     "@nuxt/image": "^1.7.0",
     "@pinia/nuxt": "^0.5.1",
+    "@tanstack/vue-query": "^5.51.5",
     "nuxt": "^3.12.3",
     "vue": "latest"
   },

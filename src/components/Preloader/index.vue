@@ -9,7 +9,7 @@
     <div class="sm:text-2xl flex items-center flex-col mt-8 text-5xl">
       <p>А вы знали?</p>
       <p class="text-xl mt-4">Весь код Falson делался 1 человеком</p>
-      <UiSpinner class="mt-[100px]" />
+      <UiSpinner class="w-[156px] h-[156px] mt-[100px]" />
     </div>
   </div>
 </template>

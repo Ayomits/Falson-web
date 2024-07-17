@@ -15,8 +15,6 @@
   border: 15px solid #383737;
   border-left-color: #ffffff;
   border-radius: 60%;
-  width: 154px;
-  height: 154px;
   animation: spin 2s linear infinite;
 }
 </style>
