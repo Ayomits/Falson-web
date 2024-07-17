@@ -70,7 +70,7 @@ export const useAuthStore = defineStore({
       useCookie("accessToken").value = null;
       useCookie("refreshToken").value = null;
       this.setIsAuth(false);
-      return false;
+      return navigateTo(`/`);
     },
   },
 });
