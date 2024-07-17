@@ -12,14 +12,16 @@
       <div v-else class="flex flex-col items-center">
         <NuxtImg
           class="rounded-full border-[1.5px] border-text"
-          :src="user?.displayAvatarURL"
+          :src="data?.displayAvatarURL"
           width="150"
-          :alt="user?.globalName"
+          :alt="data?.globalName"
         />
         <p class="mt-4 font-bold text-4xl font-roboto font-extrabold">
-          {{ user?.globalName }}
+          {{ data?.globalName }}
         </p>
-        <p class="mt-2 text-3xl opacity-80 text-text font-roboto font-normal">{{ role }}</p>
+        <p class="mt-2 text-3xl opacity-80 text-text font-roboto font-normal">
+          {{ role }}
+        </p>
       </div>
     </div>
   </ClientOnly>
@@ -40,15 +42,17 @@ const props = defineProps({
   },
 });
 
-const isLoading = ref<boolean>(true);
-
-const user = await $fetch<GuildMemberResponse>(
-  `${backendUrl}/discord/users/${props.userId}`,
-  {
-    method: "get"
-  }
-);
-isLoading.value = false;
+const fetchGuilds = async () =>
+  await $fetch<GuildMemberResponse>(
+    `${backendUrl}/discord/users/${props.userId}`,
+    {
+      method: "get",
+    }
+  );
+const { data, isLoading } = useQuery({
+  queryKey: [`developer`, props.userId],
+  queryFn: fetchGuilds,
+});
 </script>
 
 <style></style>
