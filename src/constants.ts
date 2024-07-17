@@ -16,6 +16,11 @@ export enum DefaultAvatars {
   Avatar5 = `https://cdn.discordapp.com/embed/avatars/4.png`,
 }
 
+export const SupportServerLink = "https://discord.gg/XZygw5BhyP";
+export const PrivacyLink = "https://falson-team.gitbook.io/falson-bot"
+export const TOSLink = "https://falson-team.gitbook.io/falson-bot/tos"
+
+
 export const Staff: {
   userId: string;
   role: string;

@@ -24,6 +24,7 @@
         />
       </div>
     </div>
+    <LayoutFooter class="mt-48 mb-24"/>
   </NuxtLayout>
 </template>
 

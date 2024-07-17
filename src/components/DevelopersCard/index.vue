@@ -16,10 +16,10 @@
           width="150"
           :alt="user?.globalName"
         />
-        <p class="mt-4 font-bold text-2xl font-roboto font-bold">
+        <p class="mt-4 font-bold text-4xl font-roboto font-bold">
           {{ user?.globalName }}
         </p>
-        <p class="mt-2 text-sm text-text font-roboto">{{ role }}</p>
+        <p class="mt-2 text-3xl opacity-80 text-text font-roboto font-normal">{{ role }}</p>
       </div>
     </div>
   </ClientOnly>
