@@ -1,3 +1,5 @@
+// Main page
+
 <template>
   <NuxtLayout>
     <Greatings />

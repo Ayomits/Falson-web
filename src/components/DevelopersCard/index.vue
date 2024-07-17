@@ -16,7 +16,7 @@
           width="150"
           :alt="user?.globalName"
         />
-        <p class="mt-4 font-bold text-4xl font-roboto font-bold">
+        <p class="mt-4 font-bold text-4xl font-roboto font-extrabold">
           {{ user?.globalName }}
         </p>
         <p class="mt-2 text-3xl opacity-80 text-text font-roboto font-normal">{{ role }}</p>
