@@ -1,9 +1,8 @@
 <template>
   <Suspense>
-    <div>
-      <LazyLayoutHeader />
-      <Guilds />
-    </div>
+    <NuxtLayout >
+      <LazyGuildCard />
+    </NuxtLayout>
     <template #fallback>
       <Preloader />
     </template>
