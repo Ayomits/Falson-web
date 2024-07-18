@@ -1,10 +1,12 @@
 <template>
-  <div></div>
+  <div>
+   <GuildCard :guild="guild_" v-for="guild_ in data" /> 
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { backendUrl } from '~/constants';
-import type { UserGuildResponse } from '~/types';
+import { backendUrl } from "~/constants";
+import type { UserGuildResponse } from "~/types";
 
 const authState = useAuthStore();
 const fetchGuilds = async () => {

@@ -2,7 +2,7 @@
   <Suspense>
     <template #default>
       <NuxtLayout>
-        <LazyGuildCard />
+        <GuildList />
       </NuxtLayout>
     </template>
     <template #fallback>

@@ -6,24 +6,27 @@
         Решении проблемы верификации на вашем сервере
       </p>
       <div class="sm:flex-col sm:gap-2 flex justify-center gap-10 mt-[15px]">
-        <button
-          class="greatingsButton drop-shadow-2xl"
-          @click="goTo(`${backendUrl}/auth/discord/invite`, true)"
-        >
+        <UiButton @click="goTo(`${backendUrl}/auth/discord/invite`, true)">
           Пригласить
-        </button>
-        <button
-          class="greatingsButton drop-shadow-2xl"
+        </UiButton>
+        <UiButton
           @click="
-            goTo(`${!authStore.isAuth ? backendUrl + '/auth/discord/login' : '/dashboard'}`, !authStore.isAuth)
+            goTo(
+              `${
+                !authStore.isAuth
+                  ? backendUrl + '/auth/discord/login'
+                  : '/dashboard'
+              }`,
+              !authStore.isAuth
+            )
           "
         >
-        {{ authStore.isAuth ? "Мои серверы" : "Авторизироваться" }}
-      </button>
+          {{ authStore.isAuth ? "Мои серверы" : "Авторизироваться" }}
+        </UiButton>
       </div>
     </div>
     <div class="sm:hidden">
-      <img src="@/assets/imgs/logo.svg" alt="" />
+      <UiLogo />
     </div>
   </div>
 </template>
@@ -38,14 +41,4 @@ const goTo = async (route: string, external: boolean = false) => {
 };
 </script>
 
-<style>
-.greatingsButton {
-  background-color: #353535;
-  width: 150px;
-  height: 50px;
-  border-radius: 25px;
-}
-.greatingsButton:hover {
-  background-color: #3d3d3d;
-}
-</style>
+<style></style>

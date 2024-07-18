@@ -105,7 +105,9 @@ export type UserGuildResponse = {
   guildId: string;
   icon: string | null;
   name: string;
+  memberCount: number | null;
   invited: boolean;
+  banner: string | null;
 };
 
 export type UserGuildsResponse = UserGuildResponse[];
