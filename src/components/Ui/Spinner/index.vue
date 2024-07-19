@@ -1,10 +1,21 @@
 <template>
-  <div class="loader"></div>
+  <div class="loader">
+    <div class="spinner">
+      <UiSpinnerImg />
+    </div>
+    <div class="inner-content">
+      <slot />
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup></script>
 
-<style>
+<script lang="ts" setup></script>
+
+<script lang="ts" setup></script>
+
+<style scoped>
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -12,9 +23,23 @@
 }
 
 .loader {
-  border: 15px solid #383737;
-  border-left-color: #ffffff;
-  border-radius: 60%;
-  animation: spin 2s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  animation: spin 1s infinite;
+}
+
+.inner-content {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 </style>

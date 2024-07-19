@@ -17,9 +17,8 @@ export enum DefaultAvatars {
 }
 
 export const SupportServerLink = "https://discord.gg/XZygw5BhyP";
-export const PrivacyLink = "https://falson-team.gitbook.io/falson-bot"
-export const TOSLink = "https://falson-team.gitbook.io/falson-bot/tos"
-
+export const PrivacyLink = "https://falson-team.gitbook.io/falson-bot";
+export const TOSLink = "https://falson-team.gitbook.io/falson-bot/tos";
 
 export const Staff: {
   userId: string;
@@ -44,6 +43,11 @@ export const Staff: {
   {
     userId: "965710424513347595",
     role: "Discord manager",
+  },
+  // Kawato
+  {
+    userId: "1154426948295082036",
+    role: "Designer",
   },
 ];
 

@@ -1,15 +1,11 @@
 <template>
-  <div
-    class="sm:text-[40px] flex flex-col items-center justify-center md:text-[80px] sd:text-[60px] text-[100px] font-dmsans font-bold h-screen"
-  >
-    <div class="flex flex-row items-center gap-4">
-      <img src="@/assets/imgs/logo.svg" alt="Logo" />
-      <p class="sm:text-[50px] sm:hidden mt-[60px]">Falson</p>
-    </div>
-    <div class="sm:text-2xl flex items-center flex-col mt-8 text-5xl">
-      <p>А вы знали?</p>
-      <p class="text-xl mt-4">Весь код Falson делался 1 человеком</p>
-      <UiSpinner class="w-[156px] h-[156px] mt-[100px]" />
+  <div class="flex justify-center items-center flex-col">
+    <UiSpinner class="w-[356px] h-[356px] mt-[100px]">
+      <UiLogo class="sm:hidden" />
+    </UiSpinner>
+    <div class="flex flex-col justify-center items-center mt-[50px]">
+      <p class="font-dmsans text-5xl font-bold">А вы знали?</p>
+      <p class="font-dmsand font-normal text-3xl">Falson bot был разработан командой из 3х людей</p>
     </div>
   </div>
 </template>
