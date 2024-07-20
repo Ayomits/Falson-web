@@ -1,6 +1,7 @@
 <template>
-  <div class="grid bg-general max-h-54 max-w-54">
-    <img width="50":src="guild.icon ? guild.icon : DefaultAvatars.Avatar2" alt="">
+  <div
+    class="flex flex-col rounded-2xl font-dmsans bg-general max-h-25 max-w-[370px] flex-col mt-[15px]"
+  >
   </div>
 </template>
 
@@ -12,7 +13,22 @@ const { guild } = defineProps<{
   guild: UserGuildResponse;
 }>();
 
-console.log(toRaw(guild));
+let [bannerUrl, iconUrl] = ["", ""];
+
+if (guild.banner) {
+  bannerUrl = guild.banner;
+} else {
+  if (guild.icon) {
+    bannerUrl = guild.icon;
+    iconUrl = guild.icon;
+  } else {
+    iconUrl = DefaultAvatars.Avatar2;
+    bannerUrl = DefaultAvatars.Avatar2;
+  }
+}
+if (guild.icon) {
+  iconUrl = guild.icon;
+}
 </script>
 
 <style></style>

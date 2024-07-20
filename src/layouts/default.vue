@@ -1,21 +1,13 @@
 <template>
   <div>
-    <Suspense v-if="authStore.isAuth">
-      <template #default>
-        <LayoutHeader />
-      </template>
-      <template #fallback>
-        <Preloader />
-      </template>
-    </Suspense>
-    <LayoutHeader v-else/>
+    <LayoutHeader />
     <slot />
   </div>
 </template>
 
 <script lang="ts" setup>
 // META
-const authStore = useAuthStore()
+const authStore = useAuthStore();
 useHead({
   title: "Falson",
   meta: [

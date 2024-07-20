@@ -33,11 +33,13 @@
         </transition>
       </NuxtLayout>
     </template>
+    <template #fallback>
+      <Preloader />
+    </template>
   </Suspense>
 </template>
 <script lang="ts" setup>
 import { Advantages, Staff } from "~/constants";
-import { onMounted } from "vue";
 
 useHead({
   title: "Falson",
