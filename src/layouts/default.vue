@@ -7,7 +7,6 @@
 
 <script lang="ts" setup>
 // META
-const authStore = useAuthStore();
 useHead({
   title: "Falson",
   meta: [

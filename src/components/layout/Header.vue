@@ -50,12 +50,12 @@ const fetchUserData = async () => {
   }
 };
 
-const { data, suspense } = useQuery({
+const { data, suspense, error } = useQuery({
   queryKey: ["userData"],
   queryFn: fetchUserData,
 });
 
-await suspense();
+await suspense()
 </script>
 
 <style scoped>

@@ -19,6 +19,8 @@ export enum DefaultAvatars {
 export const SupportServerLink = "https://discord.gg/XZygw5BhyP";
 export const PrivacyLink = "https://falson-team.gitbook.io/falson-bot";
 export const TOSLink = "https://falson-team.gitbook.io/falson-bot/tos";
+export const BackgroundLink =
+  "https://i.pinimg.com/736x/81/55/6d/81556d6ff2d8700e4878c7040b65d5a7.jpg";
 
 export const Staff: {
   userId: string;
