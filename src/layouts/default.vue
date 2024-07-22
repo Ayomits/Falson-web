@@ -2,6 +2,7 @@
   <div>
     <LayoutHeader />
     <slot />
+    <LayoutFooter class="mt-[150px] mb-[30px]" />
   </div>
 </template>
 

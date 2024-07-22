@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col justify-center items-center gap-5">
+  <div class="flex flex-col justify-center items-center mt-[60px]">
     <UiSearchBar v-model="guildName" />
     <div
-      class="sm:flex sm:flex-col grid grid-cols-3 max-w-[1200px] my-20 mx-auto gap-[50px]"
+      class="sm:flex sm:flex-col grid grid-cols-3 max-w-[1200px] mt-[90px] mx-auto gap-[50px]"
     >
       <GuildCard
         :guild="guild"

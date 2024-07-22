@@ -7,7 +7,7 @@
             external: true,
           })
     "
-    class="z-30 drop-shadow-2xl flex flex-col bg-general w-[350px] h-[200px] rounded-2xl overflow-hidden hover:bg-components-hover cursor-pointer"
+    class="drop-shadow-2xl flex flex-col bg-general w-[350px] h-[200px] rounded-2xl overflow-hidden hover:bg-components-hover cursor-pointer"
   >
     <div class="relative w-full h-[50%]">
       <img

@@ -1,7 +1,7 @@
 <template>
-  <div class="input-container">
+  <div class="input-container flex justify-center">
     <input
-      class="input-with-icon"
+      class="placeholder:text-white bg-components rounded-2xl h-[45px] w-[770px]"
       type="text"
       placeholder="Введите название сервера"
     />
@@ -11,32 +11,5 @@
 <script lang="ts" setup></script>
 
 <style scoped>
-.input-container {
-  position: relative;
-  width: 100%;
-  color: black;
-}
 
-.input-with-icon {
-  width: 100%;
-  padding-left: 40px; 
-  height: 40px;
-  border-radius: 2xl;
-}
-
-.input-with-icon::placeholder {
-  color: rgb(0, 0, 0);  
-}
-
-.input-container::before {
-  content: "";
-  position: absolute;
-  left: 10px; /* Расположение иконки */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px; /* Ширина иконки */
-  height: 20px; /* Высота иконки */
-  background: url("@/assets/imgs/search.svg") no-repeat center;
-  background-size: contain; /* Автоматическое масштабирование иконки */
-}
 </style>

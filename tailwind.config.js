@@ -26,6 +26,10 @@ module.exports = {
     },
     screens: {
       'sm': {'max': '768px'},
+      'md': {'min': '1024px'},
+      'lg': {'min': '1280px'},
+      'xl': {'min': '1536px'},
+
     },
   },
   plugins: [],
